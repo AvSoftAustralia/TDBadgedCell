@@ -11,10 +11,10 @@ import UIKit
 /// TDBadgedCell is a table view cell class that adds a badge, similar to the badges in Apple's own apps
 /// The badge is generated as image data and drawn as a sub view to the table view sell. This is hopefully
 /// most resource effective that a manual draw(rect:) call would be
-open class TDBadgedCell: UITableViewCell {
+@objc open class TDBadgedCell: UITableViewCell {
 
     /// Badge value
-    public var badgeString: String = "" {
+    @objc public var badgeString: String = "" {
         didSet {
             if badgeString == "" {
                 badgeImageView.removeFromSuperview()
@@ -27,26 +27,26 @@ open class TDBadgedCell: UITableViewCell {
     }
 
     /// Badge background color for normal states
-    public var badgeColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1)
+    @objc public var badgeColor = UIColor(red: 0, green: 0.478, blue: 1, alpha: 1)
 
     /// Badge background color for highlighted states
-    public var badgeColorHighlighted: UIColor = .darkGray
+    @objc public var badgeColorHighlighted: UIColor = .darkGray
 
-    public var badgeFontSize: Float = 11.0
+    @objc public var badgeFontSize: Float = 11.0
 
   /// Badge text style if dyanmic type desired
-    public var badgeTextStyle: UIFont.TextStyle?
+    @objc public var badgeTextStyle: UIFont.TextStyle?
 
-    public var badgeTextColor: UIColor?
+    @objc public var badgeTextColor: UIColor?
 
     /// Badge text offset from the left hand side of the Badge
-    public var badgeTextOffset: Float = 0
+    @objc public var badgeTextOffset: Float = 0
 
     /// Corner radius of the badge. Set to 0 for square corners.
-    public var badgeRadius: Float = 20
+    @objc public var badgeRadius: Float = 20
 
     /// The Badges offset from the right hand side of the Table View Cell
-    public var badgeOffset = CGPoint(x:10, y:0)
+    @objc public var badgeOffset = CGPoint(x:10, y:0)
 
     /// The Image view that the badge will be rendered into
     internal let badgeImageView = UIImageView()
